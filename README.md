@@ -25,13 +25,18 @@ It wrote the code, ran away, and now the game is unplayable.
 
 ## 📝 Document Your Experience
 
-- [ ] Describe the game's purpose.
-- [ ] Detail which bugs you found.
-- [ ] Explain what fixes you applied.
+- [ ] Describe the game's purpose.  
+The purpose of the game is for the player to guess a randomly generated number within a limited number of attempts.
+
+- [ ] Detail which bugs you found.  
+The main bugs I found were the hint reversal issue and the [New Game] button not properly restarting the game. Both have now been fixed. The only remaining issue is that the Settings difficulty option is not functioning correctly.
+
+- [ ] Explain what fixes you applied.  
+To fix the hint reversal bug, I corrected the comparison logic by swapping the [higher] and [lower] conditions. To fix the [New Game] button issue, I ensured the game state (including attempts and status messages) properly resets when the button is clicked.
 
 ## 📸 Demo
 
-- [ ] [Insert a screenshot of your fixed, winning game here]
+- ![Winning Screen](images/game_win.png)
 
 ## 🚀 Stretch Features
 
