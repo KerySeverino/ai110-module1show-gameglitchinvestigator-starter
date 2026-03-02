@@ -8,6 +8,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - List at least two concrete bugs you noticed at the start  
   (for example: "the secret number kept changing" or "the hints were backwards").
 
+- The [New Game] button was not functioning properly, as it did not restart the game when clicked. After running out of guesses, the only way to start a new game was by reloading the page. Additionally, the hint logic was reversed. For example, when I guessed 100 and the correct number was 71, the game incorrectly displayed [Go higher] instead of [Go lower]. Similarly, when I guessed 1 and the correct number was 12, it displayed [Go lower] instead of [Go higher]. This made the gameplay confusing and prevented the user from continuing smoothly without refreshing the page. I also notice that setting to change diffulty did not actually change it and the game stay in normal diffulty. 
 ---
 
 ## 2. How did you use AI as a teammate?
@@ -16,6 +17,7 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Give one example of an AI suggestion that was correct (including what the AI suggested and how you verified the result).
 - Give one example of an AI suggestion that was incorrect or misleading (including what the AI suggested and how you verified the result).
 
+- I used Claude Code for this project. One example of a correct AI suggestion was identifying that the game state was not resetting when the [New Game] button was clicked. After reviewing the button’s logic more closely, I confirmed that it was not resetting the number of attempts or clearing the previous game’s status. I verified the fix by updating the reset logic and testing multiple rounds to ensure the game restarted properly each time. One example of an incomplete or misleading AI suggestion involved the hint reversal bug. The AI recognized that the [higher] and [lower] logic might be reversed, but its explanation was incomplete and did not fully resolve the issue. Through manual testing and playing the game multiple times, I was able to clearly identify the reversed condition and correct the comparison logic. 
 ---
 
 ## 3. Debugging and testing your fixes
@@ -24,6 +26,8 @@ Answer each question in 3 to 5 sentences. Be specific and honest about what actu
 - Describe at least one test you ran (manual or using pytest)  
   and what it showed you about your code.
 - Did AI help you design or understand any tests? How?
+
+- I considered the issue fully resolved after I was able to beat the game two to three times without encountering any errors. The pytest tests were generated with the help of Claude Code, and they covered key scenarios such as winning the game, handling low and high guesses correctly, and verifying that the game state resets properly when starting a new game. Claude helped me understand how the tests worked and what they were validating. After playing the game and becoming more familiar with its behavior, it became much easier for me to debug the code and confirm that everything was functioning as expected.
 
 ---
 
